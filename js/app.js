@@ -54,3 +54,37 @@ var jukeBoxSongs = [
      album: "Ga Ga Ga Ga Ga"
   }
  ]
+
+var songsListContainerEl = document.querySelector('.songs-list')
+
+var giganticHtmlStr = ''
+
+forEach( jukeBoxSongs , 
+	function(songObject, index, theArray){
+		console.log(songObject.artist)
+		console.log(songObject.song)
+		console.log(songObject.album)
+		console.log('----')
+		
+		var songItemHtmlStr = '<div class="song-item">'
+		songItemHtmlStr     +=    '<h4 class="song-item__name">'+ songObject.artist +'</h4>'
+		songItemHtmlStr     +=    '<h4 class="song-item__artist">'+ songObject.song +'</h4>'
+		songItemHtmlStr     +=    '<h4 class="song-item__album">'+ songObject.album +'</h4>'
+		songItemHtmlStr     += '</div>'
+		
+		giganticHtmlStr += songItemHtmlStr
+})
+
+// console.log(songItemHtmlStr)
+
+songsListContainerEl.innerHTML = giganticHtmlStr
+// (1) iterate over jukeBoxSongs array
+
+// (2) create a html-string for each song object
+			// var htmlComponent = '<div class="some-listing">'
+			// htmlComponent     +=     '<h4>' + artist '</h4>'
+			// htmlComponent     +=     '<h4>' + song '</h4>'
+			// htmlComponent    +=  '</div>'
+			
+// (3) append each htmlComponent string to div.songs-list DOM element
+ 
